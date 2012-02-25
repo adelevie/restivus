@@ -1,0 +1,53 @@
+<br /><br /><br />
+<h2>REST API</h2>
+
+<p>The REST API lets you interact with <%= @resource_name %> objects using HTTP calls.</p>
+
+<h3>Quick Reference</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>URL</th>
+      <th>HTTP Verb</th>
+	  <th>Functionality</th>
+    </tr>
+  </thead>
+  <tbody>
+	<% @sample_calls.each do |call| %>
+		<tr>
+			<td><%= call[:url_schema] %></td>
+			<td><%= call[:http_verb] %>
+			<td>
+				<a href="#<%= call[:div_id] %>">
+					<%= call[:description] %>
+				</a>
+			</td>
+		</tr>
+	<% end %>
+  </tbody>
+</table>
+
+<div id="fields" class="span7">
+<h3>Fields</h3>
+
+<p>The following are the valid fields of <%= @resource_name %> objects:</p>
+<ul>
+<% @fields.each do |field| %>
+	<li><%= field %></li>
+<% end %>
+</ul>
+
+</div>
+
+<% @sample_calls.each do |call| %>
+	<%= erb :_sample_request, :locals => {:sample => call} %>
+<% end %>
+
+
+<div class="span6">
+<footer class="footer">
+  <p class="pull-right"><a href="#">Back to top</a></p>
+
+</footer>
+</div>
