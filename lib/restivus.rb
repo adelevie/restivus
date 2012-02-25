@@ -1,6 +1,7 @@
 require 'json'
 require 'csv'
 require 'uri'
+require 'sinatra'
 
 class Restivus < Sinatra::Base
   
@@ -118,11 +119,13 @@ class Restivus < Sinatra::Base
 
 end
 
-class Person < Restivus
-  csv "example.csv"
-end
+# Usage:
 
-class Bank < Restivus
-  csv "banks.csv"
-  pk "Bank_Name"
-end
+#class Person < Restivus
+#  csv "example.csv"
+#end
+
+#class Bank < Restivus
+#  csv "banks.csv"
+#  pk "Bank_Name"
+#end
