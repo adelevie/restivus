@@ -1,0 +1,3 @@
+source :rubygems
+
+gem "restivus", "~> 0.0.1"
