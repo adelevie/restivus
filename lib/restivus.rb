@@ -13,11 +13,23 @@ class Restivus < Sinatra::Base
     `curl #{url}`
   end
   
+  def truncated_response(url)
+    json = curl_req(url)
+    h = JSON.parse(json)
+    
+    if h["results"]
+      h["results"] = h["results"].first(3)
+      return JSON.pretty_generate(h)
+    else
+      return JSON.pretty_generate(h)
+    end
+  end
+  
   def format_curl_req(url, description="TODO", http="TODO", url_schema="TODO", div="TODO")
     result = {
       :cmd => "$ curl #{url}",
       :raw_response => curl_req(url),
-      :pretty_response => JSON.pretty_generate(JSON.parse(curl_req(url))),
+      :pretty_response => truncated_response(url),#JSON.pretty_generate(JSON.parse(curl_req(url))),
       :description => description,
       :http_verb => http,
       :url_schema => url_schema,
