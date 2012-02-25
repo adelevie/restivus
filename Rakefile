@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "restivus"
   gem.homepage = "http://github.com/adelevie/restivus"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{foo}
+  gem.description = %Q{}
   gem.email = "adelevie@gmail.com"
   gem.authors = ["Alan deLevie"]
   # dependencies defined in Gemfile
