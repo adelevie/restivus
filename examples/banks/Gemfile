@@ -1,3 +1,3 @@
 source :rubygems
 
-gem "restivus", :path => "../.." #you should change this to a rubygems hosted version
+gem "restivus", :path => "../.."#"~> 0.0.2"

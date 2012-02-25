@@ -2,6 +2,7 @@ require 'json'
 require 'csv'
 require 'uri'
 require 'sinatra'
+require 'rest-client'
 
 class Restivus < Sinatra::Base
   
@@ -10,7 +11,8 @@ class Restivus < Sinatra::Base
   # ------------
   
   def curl_req(url)
-    `curl #{url}`
+    #`curl #{url}`
+    RestClient.get(url)
   end
   
   def truncated_response(url)
@@ -29,7 +31,7 @@ class Restivus < Sinatra::Base
     result = {
       :cmd => "$ curl #{url}",
       :raw_response => curl_req(url),
-      :pretty_response => truncated_response(url),#JSON.pretty_generate(JSON.parse(curl_req(url))),
+      :pretty_response => truncated_response(url),
       :description => description,
       :http_verb => http,
       :url_schema => url_schema,

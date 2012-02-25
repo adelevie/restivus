@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    restivus (0.0.1)
+    restivus (0.0.2)
       active_support
       json
       sinatra
