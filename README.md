@@ -6,9 +6,13 @@ REST APIs for the rest of us.
 
 Restivus makes it easy to expose a CSV file as a fully-documented REST API.
 
+This is an experiment to see how DRY an API can be. Down the road, I'd like this library to also generate client SDKs in different languages.
+
+This is a very early release, the code is not stable, tested, or reliable...yet. Use at your own risk, yada yada yada (see LICENSE.txt for the real terms).
+
 ## Installation
 
-`gem "restivus", "~> 0.0.1"` or `gem install restivus`
+`gem "restivus", "~> 0.0.3"` or `gem install restivus`
 
 ## Usage
 
@@ -22,12 +26,20 @@ class Bank < Restivus
   csv "banklist.csv" # from http://www.fdic.gov/bank/individual/failed/banklist.csv
 end
 
-Bank.run!
+Bank.run! # visit localhost:4567/docs
 ```
 
-This example is running live here.
+Right now, Heroku chokes when rendering the docs page, so I'm going to try to use the Stasis gem to generate static docs pages.
 
 ## Contributing to Restivus
+
+### If you can't code
+* Find typos in the docs
+
+### If you can code
+* Add cool stuff, give me feedback, open issues, request features
+
+### Submitting changes:
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
